@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.WhatsAppNotif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.WhatsAppNotification.Core", "VirtoCommerce.WhatsAppNotification.Core\VirtoCommerce.WhatsAppNotification.Core.csproj", "{9F1B05F5-C50A-412E-ABD9-92163BD1D640}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtoCommerce.WhatsAppNotification.Data", "VirtoCommerce.WhatsAppNotification.Data\VirtoCommerce.WhatsAppNotification.Data.csproj", "{924E7BA3-9FE9-4020-B14C-E002A6D40083}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9F1B05F5-C50A-412E-ABD9-92163BD1D640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F1B05F5-C50A-412E-ABD9-92163BD1D640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F1B05F5-C50A-412E-ABD9-92163BD1D640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924E7BA3-9FE9-4020-B14C-E002A6D40083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924E7BA3-9FE9-4020-B14C-E002A6D40083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924E7BA3-9FE9-4020-B14C-E002A6D40083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924E7BA3-9FE9-4020-B14C-E002A6D40083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

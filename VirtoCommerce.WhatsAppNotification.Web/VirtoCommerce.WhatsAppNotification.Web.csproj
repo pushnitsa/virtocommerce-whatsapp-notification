@@ -95,11 +95,14 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Gateway\WhatsAppNotificationSendingGateway.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="module.manifest" />
+    <Content Include="module.manifest">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="module.ignore" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -108,6 +111,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VirtoCommerce.WhatsAppNotification.Core\VirtoCommerce.WhatsAppNotification.Core.csproj">
+      <Project>{9f1b05f5-c50a-412e-abd9-92163bd1d640}</Project>
+      <Name>VirtoCommerce.WhatsAppNotification.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VirtoCommerce.WhatsAppNotification.Data\VirtoCommerce.WhatsAppNotification.Data.csproj">
+      <Project>{924e7ba3-9fe9-4020-b14c-e002a6d40083}</Project>
+      <Name>VirtoCommerce.WhatsAppNotification.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

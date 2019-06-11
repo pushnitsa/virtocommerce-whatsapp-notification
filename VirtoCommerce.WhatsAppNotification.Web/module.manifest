@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <module>
   <id>VirtoCommerce.WhatsAppNotification</id>
   <version>1.0.0</version>
 
-  <platformVersion>2.13.48</platformVersion>
+  <platformVersion>2.13.47</platformVersion>
   <dependencies>
   </dependencies>
 
@@ -19,4 +19,25 @@
 
   <assemblyFile>VirtoCommerce.WhatsAppNotification.Web.dll</assemblyFile>
   <moduleType>VirtoCommerce.WhatsAppNotification.Web.Module, VirtoCommerce.WhatsAppNotification.Web</moduleType>
+
+  <settings>
+      <group name="Platform|Notifications|WhatsApp">
+          <setting>
+              <name>VirtoCommerce.WhatsApp.License</name>
+              <title>WooWa license</title>
+              <valueType>string</valueType>
+          </setting>
+          <setting>
+              <name>VirtoCommerce.WhatsApp.Domain</name>
+              <title>WooWa account domain</title>
+              <valueType>string</valueType>
+          </setting>
+          <setting>
+              <name>VirtoCommerce.WhatsApp.APIEndpoint</name>
+              <title>WooWa API endpoint</title>
+              <valueType>string</valueType>
+              <defaultValue>https://api.woo-wa.com/v2.0</defaultValue>
+          </setting>
+      </group>
+  </settings>
 </module>

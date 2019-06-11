@@ -1,0 +1,42 @@
+using System.Net;
+using System.Text;
+using VirtoCommerce.Platform.Core.Settings;
+
+namespace VirtoCommerce.WhatsAppNotification.Data.WhatsAppClient
+{
+    public class WooWaClient
+    {
+        private readonly ISettingsManager _settingsManager;
+
+        public WooWaClient(ISettingsManager settingsManager)
+        {
+            _settingsManager = settingsManager;
+        }
+
+        public void SendMessage(string recipient, string message)
+        {
+            var license = _settingsManager.GetValue("VirtoCommerce.WhatsApp.License", default(string));
+            var domain = _settingsManager.GetValue("VirtoCommerce.WhatsApp.Domain", default(string));
+            var apiEndpoint = _settingsManager.GetValue("VirtoCommerce.WhatsApp.APIEndpoint", default(string));
+
+            if (!string.IsNullOrEmpty(license) && !string.IsNullOrEmpty(domain) && !string.IsNullOrEmpty(apiEndpoint))
+            {
+                var request = (HttpWebRequest)WebRequest.Create($"{apiEndpoint}/send-message");
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded";
+
+                var data = $"license={license}&domain={domain}&wa_number={recipient}&text={message}";
+                var byteArray = Encoding.UTF8.GetBytes(data);
+
+                request.ContentLength = byteArray.Length;
+
+                using (var dataStream = request.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+                }
+
+                request.GetResponse();
+            }
+        }
+    }
+}
