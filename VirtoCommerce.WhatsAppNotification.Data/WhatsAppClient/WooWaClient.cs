@@ -25,7 +25,7 @@ namespace VirtoCommerce.WhatsAppNotification.Data.WhatsAppClient
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
 
-                var data = $"license={license}&domain={domain}&wa_number={recipient}&text={message}";
+                var data = $"license={license}&domain={domain}&wa_number={NormalizeRecipient(recipient)}&text={message}";
                 var byteArray = Encoding.UTF8.GetBytes(data);
 
                 request.ContentLength = byteArray.Length;
@@ -37,6 +37,16 @@ namespace VirtoCommerce.WhatsAppNotification.Data.WhatsAppClient
 
                 request.GetResponse();
             }
+        }
+
+        private static string NormalizeRecipient(string recepient)
+        {
+            if (recepient.StartsWith("+"))
+            {
+                recepient = recepient.Remove(0, 1);
+            }
+
+            return recepient;
         }
     }
 }
