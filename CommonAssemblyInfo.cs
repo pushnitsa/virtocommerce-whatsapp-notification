@@ -4,10 +4,10 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("VirtoCommerce")]
 [assembly: AssemblyProduct("Virto Commerce WhatsApp Gateway Module")]
-[assembly: AssemblyCopyright("Copyright © VirtoCommerce 2011-2019")]
+[assembly: AssemblyCopyright("Copyright Â© VirtoCommerce 2011-2019")]
 
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
+[assembly: AssemblyVersion("1.0.0.1")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]

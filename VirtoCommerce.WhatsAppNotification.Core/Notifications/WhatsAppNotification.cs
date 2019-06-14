@@ -1,11 +1,11 @@
-﻿using VirtoCommerce.Platform.Core.Notifications;
+using VirtoCommerce.Platform.Core.Notifications;
 using VirtoCommerce.WhatsAppNotification.Core.Gateway;
 
 namespace VirtoCommerce.WhatsAppNotification.Core.Notifications
 {
-    public class WhatsAppNotification : Notification
+    public abstract class WhatsAppNotification : Notification
     {
-        public WhatsAppNotification(IWhatsAppNotificationSendingGateway notificationSendingGateway) 
+        protected WhatsAppNotification(IWhatsAppNotificationSendingGateway notificationSendingGateway) 
             : base(notificationSendingGateway)
         {
         }
