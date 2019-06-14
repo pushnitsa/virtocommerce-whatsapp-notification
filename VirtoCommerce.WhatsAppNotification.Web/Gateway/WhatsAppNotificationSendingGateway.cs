@@ -1,3 +1,4 @@
+using System;
 using VirtoCommerce.Platform.Core.Notifications;
 using VirtoCommerce.WhatsAppNotification.Core.Gateway;
 using VirtoCommerce.WhatsAppNotification.Data.WhatsAppClient;
@@ -17,9 +18,17 @@ namespace VirtoCommerce.WhatsAppNotification.Web.Gateway
         {
             var result = new SendNotificationResult();
 
-            _client.SendMessage(notification.Recipient, notification.Body);
+            try
+            {
+                _client.SendMessage(notification.Recipient, notification.Body);
 
-            result.IsSuccess = true;
+                result.IsSuccess = true;
+            }
+            catch (Exception e)
+            {
+                result.IsSuccess = false;
+                result.ErrorMessage = e.ToString();
+            }
 
             return result;
         }
