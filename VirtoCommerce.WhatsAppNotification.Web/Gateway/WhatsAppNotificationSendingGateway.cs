@@ -7,9 +7,9 @@ namespace VirtoCommerce.WhatsAppNotification.Web.Gateway
 {
     public class WhatsAppNotificationSendingGateway : IWhatsAppNotificationSendingGateway
     {
-        private readonly WooWaClient _client;
+        private readonly IWhatsAppClient _client;
 
-        public WhatsAppNotificationSendingGateway(WooWaClient client)
+        public WhatsAppNotificationSendingGateway(IWhatsAppClient client)
         {
             _client = client;
         }

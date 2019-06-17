@@ -25,7 +25,7 @@ namespace VirtoCommerce.WhatsAppNotification.Web
         {
 
             _container.RegisterType<IWhatsAppNotificationSendingGateway, WhatsAppNotificationSendingGateway>();
-            _container.RegisterType<WooWaClient>();
+            _container.RegisterType<IWhatsAppClient, TwilioWhatsApp>();
 
             var notificationManager = _container.Resolve<INotificationManager>();
 
